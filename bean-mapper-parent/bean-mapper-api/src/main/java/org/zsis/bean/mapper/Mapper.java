@@ -1,17 +1,11 @@
 package org.zsis.bean.mapper;
 
-import java.io.Serializable;
 
-
-/**
- *
- * @author salespaulo
- * @param <T>
- */
-public interface Mapper extends Serializable {
+public interface Mapper {
 
 	/**
 	 * TODO javadoc
+	 *
 	 * @param source
 	 * @return
 	 */
