@@ -13,7 +13,7 @@ import org.zsis.bean.mapper.DataMapperWrapper.DataMapperType;
  * @param <T>
  */
 @SuppressWarnings("restriction")
-public class ReflectionMapper implements Mapper {
+public class ReflectionMapper {
 
 	/** TODO javadoc */
 	private static final long serialVersionUID = -2637670360688261296L;
@@ -21,10 +21,14 @@ public class ReflectionMapper implements Mapper {
 	/**
 	 * TODO javadoc
 	 */
-	public ReflectionMapper() {
+	private ReflectionMapper() {
         super();
 	}
 
+	public static void of(final Object source, final Object target) {
+		new ReflectionMapper().mapData(source, target);
+	}
+	
 	/*
 	 * (non-Javadoc)
 	 *
@@ -32,7 +36,7 @@ public class ReflectionMapper implements Mapper {
 	 * br.com.alelo.integrador.service.adapter.mapper.Mapper#mapData(br.com.
 	 * alelo.integrador.service.adapter.mapper.Data, java.lang.Class)
 	 */
-	public void mapData(final Object source, final Object target) {
+	private void mapData(final Object source, final Object target) {
 		try {
 			final Field[] sourceFields =  source.getClass().getDeclaredFields();
 
