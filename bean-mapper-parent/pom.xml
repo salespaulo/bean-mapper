@@ -8,7 +8,7 @@
   <packaging>pom</packaging>
   <version>1.0</version>
 
-  <name>Z Sistemas: bean-mapper Parent</name>
+  <name>ZSIS: bean-mapper parent</name>
   <url>http://www.zsistemas.com.br/bean-mapper</url>
   <inceptionYear>2010</inceptionYear>
 
@@ -235,6 +235,6 @@
   </profiles>
 
   <modules>
-    <module>bean-mapper</module>
+    <module>bean-mapper-api</module>
   </modules>
 </project>

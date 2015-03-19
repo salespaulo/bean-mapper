@@ -10,8 +10,8 @@
     <version>1.0</version>
   </parent>
 
-  <groupId>org.zsis.bean-mapper</groupId>
-  <artifactId>bean-mapper</artifactId>
+  <groupId>org.zsis</groupId>
+  <artifactId>bean-mapper-api</artifactId>
   <version>0.0.1</version>
 
   <name>bean-mapper</name>
