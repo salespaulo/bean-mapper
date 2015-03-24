@@ -2,6 +2,8 @@ package org.zsis.bean.mapper;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
+import java.util.HashSet;
+import java.util.Set;
 
 import javax.xml.bind.annotation.XmlTransient;
 
@@ -15,6 +17,22 @@ import org.zsis.bean.mapper.DataMapperWrapper.DataMapperType;
 @SuppressWarnings("restriction")
 class ReflectionMapper implements Mapper {
 
+	class SetMapperContext implements MapperContext {
+
+		private final Set<Object> listTo = new HashSet<Object>();
+		private final Set<Object> listFrom = new HashSet<Object>();
+
+		public void addTo(Object to) {
+			listTo.add(to);
+		}
+
+		public void addFrom(Object from) {
+			listFrom.add(from);
+		}
+	}
+
+	private SetMapperContext context = new SetMapperContext();
+
 	/**
 	 * TODO javadoc
 	 */
@@ -22,14 +40,24 @@ class ReflectionMapper implements Mapper {
         super();
 	}
 
-	/*
-	 * (non-Javadoc)
-	 *
-	 * @see
-	 * br.com.alelo.integrador.service.adapter.mapper.Mapper#mapData(br.com.
-	 * alelo.integrador.service.adapter.mapper.Data, java.lang.Class)
+	/* (non-Javadoc)
+	 * @see org.zsis.bean.mapper.Mapper#getContext()
 	 */
-	public void mapData(final Object source, final Object target) {
+	public MapperContext getContext() {
+		return context;
+	}
+
+	/* (non-Javadoc)
+	 * @see org.zsis.bean.mapper.Mapper#mapData()
+	 */
+	public void mapData() {
+		final Object source = context.listFrom.iterator().next();
+		final Object target = context.listTo.iterator().next();
+
+		mapData(source, target);
+	}
+
+	private void mapData(final Object source, final Object target) {
 		try {
 			final Field[] sourceFields =  source.getClass().getDeclaredFields();
 

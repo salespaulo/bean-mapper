@@ -33,10 +33,23 @@ public class ConventionMapperTest {
 
 		// Example of custom mapper
 		Map.use(new Mapper() {
-			public void mapData(Object source, Object target) {
+			public void mapData() {
 				// Implement here!!!!
 			}
-		}).map(ladoA, ladoB);
+
+			public MapperContext getContext() {
+				// TODO Auto-generated method stub
+				return new MapperContext() {
+					public void addTo(Object to) {
+						// TODO Auto-generated method stub
+					}
+
+					public void addFrom(Object from) {
+						// TODO Auto-generated method stub
+					}
+				};
+			}
+		}).from(ladoA).to(ladoB).apply();;
 		// Example of custom mapper
 
 		System.out.println(ladoB);

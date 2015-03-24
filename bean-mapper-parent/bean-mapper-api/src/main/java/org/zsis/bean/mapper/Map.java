@@ -19,11 +19,32 @@ public final class Map {
 	}
 
 	public static void of(final Object source, final Object target) {
-		new Map().map(source, target);
+		new Map().from(source).to(target).apply();
 	}
 
-	public void map(Object source, Object target) {
-		mapper.mapData(source, target);
+	public Map from(final Object from) {
+		mapper.getContext().addFrom(from);
+		return this;
+	}
+
+	public Map to(final Object to) {
+		mapper.getContext().addTo(to);
+		return this;
+	}
+
+	public Map to(final Class<?> to) {
+		try {
+			mapper.getContext().addTo(to.newInstance());
+			return this;
+		} catch (InstantiationException e) {
+			throw new MapperException("N\u00e3o foi poss\u00edvel inst\u00e2nciar target class", e);
+		} catch (IllegalAccessException e) {
+			throw new MapperException("Acesso ilegal à propriedade para mapear.", e);
+		}
+	}
+
+	public void apply() {
+		mapper.mapData();
 	}
 
 	private Map() {
