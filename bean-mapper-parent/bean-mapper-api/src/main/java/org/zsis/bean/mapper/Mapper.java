@@ -1,6 +1,5 @@
 package org.zsis.bean.mapper;
 
-
 public interface Mapper {
 
 	/**
@@ -9,6 +8,11 @@ public interface Mapper {
 	 * @param source
 	 * @return
 	 */
-	void mapData(Object source, Object target);
+	void mapData();
 
+	/**
+	 * TODO (salespaulo) - javadoc
+	 * @return
+	 */
+	MapperContext getContext();
 }
