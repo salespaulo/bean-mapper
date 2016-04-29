@@ -1,7 +1,7 @@
 
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
-import org.zsis.bean.mapper.DataMapperTo;
+import org.ps.bean.mapper.DataMapperTo;
 
 public class LadoAWithBasicAnnotation {
 	@DataMapperTo("B1")

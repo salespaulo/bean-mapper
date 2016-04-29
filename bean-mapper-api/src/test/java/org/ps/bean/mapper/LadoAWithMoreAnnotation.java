@@ -1,8 +1,6 @@
-
+package org.ps.bean.mapper;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
-import org.ps.bean.mapper.DataMapperTo;
-import org.ps.bean.mapper.DataMapperWrapper;
 
 public class LadoAWithMoreAnnotation {
 	@DataMapperTo("B1")

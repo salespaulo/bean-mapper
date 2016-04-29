@@ -3,18 +3,18 @@
 
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>org.zsis</groupId>
+  <groupId>org.ps</groupId>
   <artifactId>bean-mapper-parent</artifactId>
   <packaging>pom</packaging>
   <version>1.0</version>
 
-  <name>ZSIS: bean-mapper parent</name>
-  <url>http://www.zsistemas.com.br/bean-mapper</url>
+  <name>${project.organization.name}: ${project.artifactId}</name>
+  <url>http://www.ps.org/bean-mapper</url>
   <inceptionYear>2010</inceptionYear>
 
   <organization>
-    <name>Z Sistemas Ltda ME</name>
-    <url>http://www.zsistemas.com.br</url>
+    <name>ORG PS</name>
+    <url>http://www.ps.org</url>
   </organization>
 
   <properties>
@@ -155,7 +155,6 @@
           <target>${java.target.version}</target>
           <debug>true</debug>
           <optimize>true</optimize>
-          <showDeprecations>true</showDeprecations>
         </configuration>
       </plugin>
       
