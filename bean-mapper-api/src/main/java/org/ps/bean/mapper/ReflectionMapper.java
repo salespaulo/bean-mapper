@@ -88,7 +88,7 @@ class ReflectionMapper implements Mapper {
 		}
 	}
 
-	/**  */
+	/** Mapeamento atraves de um classe adaptadora */
 	private void dataMapperWrapper(final Object source, final Object targetObject,
 			Field field) throws IllegalAccessException, NoSuchFieldException,
 			InstantiationException {
