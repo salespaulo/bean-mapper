@@ -14,7 +14,6 @@ import org.ps.bean.mapper.DataMapperWrapper.DataMapperType;
  * @author salespaulo
  * @param <T>
  */
-@SuppressWarnings("restriction")
 class ReflectionMapper implements Mapper {
 
 	class SetMapperContext implements MapperContext {
