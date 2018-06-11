@@ -14,7 +14,6 @@ import org.ps.bean.mapper.DataMapperWrapper.DataMapperType;
  * @author salespaulo
  * @param <T>
  */
-@SuppressWarnings("restriction")
 class ReflectionMapper implements Mapper {
 
 	class SetMapperContext implements MapperContext {
@@ -88,7 +87,7 @@ class ReflectionMapper implements Mapper {
 		}
 	}
 
-	/**  */
+	/** Mapeamento atraves de um classe adaptadora */
 	private void dataMapperWrapper(final Object source, final Object targetObject,
 			Field field) throws IllegalAccessException, NoSuchFieldException,
 			InstantiationException {

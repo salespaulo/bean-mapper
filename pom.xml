@@ -37,8 +37,8 @@
     <build.release.final.name>${project.artifactId}_${project.version}</build.release.final.name>
     
     <!-- Versão do java -->
-    <java.source.version>1.5</java.source.version>
-    <java.target.version>1.5</java.target.version>
+    <java.source.version>1.8</java.source.version>
+    <java.target.version>1.8</java.target.version>
     
   </properties>
 
